@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     try {
         //hashing password with bcryt which is async
         const salt = await bcrypt.genSalt()//getting salt(default 10)
-        const hashedPassword = await bcrypt.hash(req.body.password, salt)//bcrypt needs salt and password to has a password
+        const hashedPassword = await bcrypt.hash(req.body.password, salt)//bcrypt needs salt and password to hash a password
 
         //creating a new user
         const user = new User({
