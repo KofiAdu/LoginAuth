@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 })
 
 router.post('/:login', async (req, res) => {
-    //finding a user to login
+    //finding a user trying to login
     const user = User.find(user => user.username == req.body.username)
     if (user == null) {
         res.status(400).send('User does not exist')
